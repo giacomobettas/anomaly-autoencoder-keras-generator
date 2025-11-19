@@ -3,7 +3,6 @@ from typing import Tuple, List
 
 import cv2
 import numpy as np
-import tensorflow as tf
 from tensorflow.keras.utils import Sequence
 
 
@@ -31,15 +30,17 @@ class FrameGenerator(Sequence):
         batch_size: int = 32,
         shuffle: bool = True,
         color_mode: str = "grayscale",
+        **kwargs,
     ):
-        """
-        Args:
-            root_dir: Root directory with per-person subfolders.
-            image_size: (width, height) to which frames are resized.
-            batch_size: Number of images per batch.
-            shuffle: Whether to shuffle indices between epochs.
-            color_mode: "grayscale" or "rgb".
-        """
+        # Important for Keras to handle workers, multiprocessing, etc. if ever used
+        super().__init__(**kwargs)
+
+        # Args:
+        #   root_dir: Root directory with per-person subfolders.
+        #   image_size: (width, height) to which frames are resized.
+        #   batch_size: Number of images per batch.
+        #   shuffle: Whether to shuffle indices between epochs.
+        #   color_mode: "grayscale" or "rgb".
         self.root_dir = root_dir
         self.image_size = image_size
         self.batch_size = batch_size

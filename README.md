@@ -1,4 +1,4 @@
-# 🧠 Convolutional Autoencoder with Data Generator (Keras Iteration)
+# 🧠 Convolutional Autoencoder in Keras with Data Generator
 
 This repository contains a **deep-learning iteration** of my anomaly detection project for **elderly home surveillance**, developed as part of my thesis internship for the *Master in Data Analysis for Business Intelligence and Data Science*.
 

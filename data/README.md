@@ -1,6 +1,6 @@
 # Data Folder
 
-This folder contains the image data used to train and validate the convolutional autoencoder.
+This folder contains the image data used to train, validate, and evaluate the convolutional autoencoder.
 
 The expected structure is:
 
@@ -22,10 +22,11 @@ data/
 ```
 
 * Each `personX` subfolder contains grayscale or color frames.
-* For this public repository, a **tiny synthetic dataset** is provided as a runnable example.
+* In this public repository, a **tiny synthetic dataset** is used as an example,
+so the project can run out-of-the-box.
 * In real experiments (e.g. on the Université de Bourgogne Fall Detection Dataset), frames were extracted from videos and preprocessed (cropping, silhouettes, etc.) before being placed into this structure.
 
-The training code (`src/train.py`) only assumes that:
+The training and evaluation code only assumes that:
 
 * images can be read with OpenCV,
 * they will be resized to the configured `image_size`,
